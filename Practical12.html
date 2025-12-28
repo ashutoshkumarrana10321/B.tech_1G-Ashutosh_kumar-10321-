@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Experiment 12 - Interactive JS</title>
+</head>
+
+<body>
+
+<h2>Experiment 12: Conditional & Looping Statements</h2>
+
+<!---------------- IF-ELSE SECTION ---------------->
+<h3>1. If – Else Statement</h3>
+Enter a Number: <input type="number" id="ifNum">
+<button onclick="checkNumber()">Check</button>
+<p id="ifResult"></p>
+
+<script>
+function checkNumber() {
+    let n = document.getElementById("ifNum").value;
+
+    if (n == "") {
+        document.getElementById("ifResult").innerHTML = "Please enter a number.";
+        return;
+    }
+
+    if (n > 0) {
+        document.getElementById("ifResult").innerHTML = 
+        "Result: The number is Positive.<br>Explanation: Because " + n + " > 0.";
+    } else if (n < 0) {
+        document.getElementById("ifResult").innerHTML = 
+        "Result: The number is Negative.<br>Explanation: Because " + n + " < 0.";
+    } else {
+        document.getElementById("ifResult").innerHTML = 
+        "Result: The number is Zero.<br>Explanation: Because it is equal to 0.";
+    }
+}
+</script>
+
+
+<!---------------- FOR LOOP SECTION ---------------->
+<h3>2. For Loop</h3>
+Enter a Number (loop count): <input type="number" id="forNum">
+<button onclick="runForLoop()">Run For Loop</button>
+<p id="forResult"></p>
+
+<script>
+function runForLoop() {
+    let n = document.getElementById("forNum").value;
+    let output = "";
+
+    if (n == "") {
+        document.getElementById("forResult").innerHTML = "Please enter a number.";
+        return;
+    }
+
+    output += "For Loop Output: ";
+    for (let i = 1; i <= n; i++) {
+        output += i + " ";
+    }
+    output += "<br>Explanation: Loop runs from 1 to " + n + ".";
+
+    document.getElementById("forResult").innerHTML = output;
+}
+</script>
+
+
+<!---------------- WHILE LOOP SECTION ---------------->
+<h3>3. While Loop</h3>
+Enter a Number (loop count): <input type="number" id="whileNum">
+<button onclick="runWhileLoop()">Run While Loop</button>
+<p id="whileResult"></p>
+
+<script>
+function runWhileLoop() {
+    let n = document.getElementById("whileNum").value;
+    let output = "";
+
+    if (n == "") {
+        document.getElementById("whileResult").innerHTML = "Please enter a number.";
+        return;
+    }
+
+    let i = 1;
+    output += "While Loop Output: ";
+    while (i <= n) {
+        output += i + " ";
+        i++;
+    }
+
+    output += "<br>Explanation: While loop repeats until i becomes greater than " + n + ".";
+    document.getElementById("whileResult").innerHTML = output;
+}
+</script>
+
+
+<!---------------- DO-WHILE LOOP SECTION ---------------->
+<h3>4. Do–While Loop</h3>
+Enter a Number (loop count): <input type="number" id="doNum">
+<button onclick="runDoWhile()">Run Do-While Loop</button>
+<p id="doResult"></p>
+
+<script>
+function runDoWhile() {
+    let n = document.getElementById("doNum").value;
+    let output = "";
+
+    if (n == "") {
+        document.getElementById("doResult").innerHTML = "Please enter a number.";
+        return;
+    }
+
+    let i = 1;
+    output += "Do-While Loop Output: ";
+    do {
+        output += i + " ";
+        i++;
+    } while (i <= n);
+
+    output += "<br>Explanation: Do-while loop runs at least once even if the condition is false.";
+    document.getElementById("doResult").innerHTML = output;
+}
+</script>
+
+</body>
+</html>

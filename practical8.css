@@ -1,0 +1,33 @@
+* {
+    background-color: rgba(255, 0, 0, 0.4);
+}
+
+h1, h2, p {
+    text-align: center;
+    font-spacing: 3px;
+}
+.one {
+    height: 300px;
+    width: 300px;
+    margin: 25px;
+    padding: 10px;
+    border: 2px solid black;
+}
+
+#container1 {
+    background-color: linen;
+    font-style: italic;
+}
+
+#container2 {
+    background-color: aqua;
+    font-weight: bold;
+}
+
+div p {
+    color: brown;
+}
+
+div h3 { 
+    color: white;
+}

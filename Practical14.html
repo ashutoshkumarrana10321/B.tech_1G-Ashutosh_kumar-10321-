@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation Example</title>
+
+    <!-- CSS Styling -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f7ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            width: 380px;
+            box-shadow: 0px 0px 12px rgba(0,0,0,0.2);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 15px;
+            color: #0072ff;
+        }
+        label {
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 6px 0 15px 0;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+        }
+        .error {
+            font-size: 13px;
+            color: red;
+            margin-top: -10px;
+            margin-bottom: 10px;
+            display: none;
+        }
+        button {
+            background: #0072ff;
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 11px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0057c7;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Registration Form</h2>
+
+        <form id="myForm" onsubmit="return handleSubmit()">
+            
+            <label>Full Name:</label>
+            <input type="text" id="name" oninput="validateName()">
+            <p class="error" id="nameError">Name must be at least 3 characters.</p>
+
+            <label>Email:</label>
+            <input type="email" id="email" oninput="validateEmail()">
+            <p class="error" id="emailError">Enter a valid email address.</p>
+
+            <label>Password:</label>
+            <input type="password" id="password" oninput="validatePassword()">
+            <p class="error" id="passwordError">Password must be 6+ characters.</p>
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        
+        function validateName() {
+            let name = document.getElementById("name").value;
+            let err = document.getElementById("nameError");
+
+            if (name.length < 3) err.style.display = "block";
+            else err.style.display = "none";
+        }
+
+       
+        function validateEmail() {
+            let email = document.getElementById("email").value;
+            let err = document.getElementById("emailError");
+            let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+            if (!email.match(pattern)) err.style.display = "block";
+            else err.style.display = "none";
+        }
+
+        
+        function validatePassword() {
+            let password = document.getElementById("password").value;
+            let err = document.getElementById("passwordError");
+
+            if (password.length < 6) err.style.display = "block";
+            else err.style.display = "none";
+        }
+
+        
+        function handleSubmit() {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+
+            if (name.length < 3 || password.length < 6 || !email.includes("@")) {
+                alert("⚠ Validation Failed! Please correct all fields.");
+                return false;  
+            }
+
+            alert("🎉 Registration Successful!");
+            return true;  
+        }
+    </script>
+</body>
+</html>

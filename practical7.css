@@ -1,0 +1,28 @@
+div {
+    width: 200px;
+    height: 200px;
+    border: 3px solid rgb(62, 15, 203);
+    padding: 20px;
+    margin: 30px;
+    box-sizing: border-box;
+}
+
+#box1 {
+    background-color: rgba(255, 0, 0, 0.5);
+    text-align: center;
+}
+
+#box2 {
+    background-image: url("Windows.png");
+    background-size: cover;
+}
+
+#box3 {
+    background-color: rgba(0, 255, 0, 0.5);
+    text-align: center;
+}
+
+#box4 {
+    background-image: url("apple.png");
+    background-size: cover;
+}

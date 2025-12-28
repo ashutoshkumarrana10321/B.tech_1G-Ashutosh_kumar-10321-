@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM Manipulation Demo</title>
+  <style>
+    #message { color: rgb(32, 18, 187); }
+    .highlight { background: rgb(200, 64, 161); }
+  </style>
+</head>
+<body>
+  <h2 id="header">Original Header</h2>
+  <p id="message">This is the original message.</p>
+  <div class="container">
+    <p class="highlight">This is a highlighted paragraph.</p>
+    <p>This is another paragraph.</p>
+  </div>
+  <button id="manipulateBtn">Manipulate DOM</button>
+
+  <script>
+    document.getElementById("manipulateBtn").onclick = function() {
+      
+      
+      var header = document.getElementById("header");
+      header.innerHTML = "Header Changed with getElementById()";
+      header.style.color = "blue";
+
+     
+      var highlightedPara = document.querySelector(".highlight");
+      highlightedPara.innerHTML = "This text was updated with querySelector()";
+      highlightedPara.style.fontWeight = "bold";
+
+      
+      var msg = document.getElementById("message");
+      msg.innerHTML = "<span style='color: red;'>Message changed using innerHTML!</span>";
+
+      
+      var btn = document.querySelector("#manipulateBtn");
+      btn.innerHTML = "Already Manipulated";
+      btn.disabled = true;
+    };
+  </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        :root { --neon: #00f2ff; }
+        body { background: #050505; 
+        color: white; 
+        font-family: 'Segoe UI', sans-serif; 
+        overflow: hidden; height: 100vh; margin: 0; }
+        
+        #ui-layer { 
+        position: fixed; 
+        top: 20px; 
+        left: 50%; 
+        transform: translateX(-50%); 
+        z-index: 10; 
+        display: flex; 
+        gap: 10px; }
+        
+        input { 
+        background: #111; 
+        border: 1px solid #333; 
+        color: white; 
+        padding: 10px 15px; 
+        border-radius: 20px; 
+        outline: none; 
+        transition: 0.3s; }
+
+        input:focus { 
+        border-color: var(--neon); 
+        box-shadow: 0 0 10px var(--neon); }
+
+        .tag {
+            position: absolute;
+            padding: 8px 15px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: fadeIn 0.5s ease-out;
+            user-select: none;
+        }
+
+        .tag:hover { transform: scale(1.2) rotate(5deg); box-shadow: 0 0 20px white; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0) translateY(20px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="ui-layer">
+        <input type="text" id="tagInput" placeholder="Enter a word...">
+    </div>
+
+    <div id="cloud-container"></div>
+
+    <script>
+        const container = document.getElementById('cloud-container');
+        const input = document.getElementById('tagInput');
+
+        const spawnTag = (text) => {
+            const tag = document.createElement('div');
+    
+            const randomColor = `hsl(${Math.random() * 360}, 80%, 60%)`;
+            const x = Math.random() * (window.innerWidth - 100);
+            const y = Math.random() * (window.innerHeight - 100);
+
+            tag.className = 'tag';
+            tag.innerText = text;
+            
+            Object.assign(tag.style, {
+                left: `${x}px`,
+                top: `${y}px`,
+                color: randomColor,
+                border: `2px solid ${randomColor}`,
+                boxShadow: `0 0 10px ${randomColor}`
+            });
+            tag.addEventListener('click', () => {
+                tag.style.transform = "scale(0)";
+                setTimeout(() => tag.remove(), 300); 
+            });
+            container.appendChild(tag);
+        };
+
+        input.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' && input.value.trim() !== '') {
+                spawnTag(input.value);
+                input.value = '';
+            }
+        });
+    </script>
+</body>
+</html>
