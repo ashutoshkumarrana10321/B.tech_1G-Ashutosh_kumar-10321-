@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Layout Example</title>
+
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  header {
+    background-color: #2a7ade;
+    color: white;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  /* Sidebar and content default (desktop) */
+  .sidebar {
+    background-color: #f4f4f4;
+    padding: 20px;
+    width: 25%;
+    min-height: 80vh;
+    float: left;
+  }
+
+  .content {
+    background-color: #ffffff;
+    padding: 20px;
+    width: 75%;
+    min-height: 80vh;
+    float: left;
+  }
+
+  /* Clearfix after floats */
+  .container::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  /* -------- Responsive Layouts -------- */
+
+  /* Mobile (<600px): Stack all vertically */
+  @media (max-width: 599px) {
+    .container {
+      display: block;
+    }
+
+    .sidebar, .content {
+      width: 100%;
+      float: none;
+    }
+
+    header {
+      font-size: 20px;
+    }
+  }
+
+  /* Tablet (600px–900px): Sidebar smaller */
+  @media (min-width: 600px) and (max-width: 900px) {
+    .container {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .sidebar {
+      width: 35%;
+    }
+
+    .content {
+      width: 65%;
+    }
+  }
+
+  /* Desktop (>900px): Flexbox layout */
+  @media (min-width: 901px) {
+    .container {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .sidebar {
+      width: 25%;
+    }
+
+    .content {
+      width: 75%;
+    }
+  }
+
+</style>
+</head>
+<body>
+
+  <header>
+    <h1>My Responsive Layout</h1>
+  </header>
+
+  <div class="container">
+    <aside class="sidebar">
+      <h2>Sidebar</h2>
+      <p>Links or navigation items go here.</p>
+      <p>Dashboard</p>
+      <p>Assignments</p>
+      <p>Profile</p>
+      <p>Results</p>
+      <p>Settings</p>
+      <p>Click Me (JS)</p>
+    </aside>
+
+    <main class="content">
+      <h2>Main Content</h2>
+      <p>
+        This is the main content area. Resize the window to see how the layout changes:
+      </p>
+      <ul>
+        <li>Below 600px: stacked vertically</li>
+        <li>600–900px: side by side (tablet view)</li>
+        <li>Above 900px: full flexbox desktop layout</li>
+      </ul>
+    </main>
+  </div>
+
+</body>
+</html>
