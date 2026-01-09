@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">MyPortfolio</div>
+
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="theme-toggle" onclick="toggleTheme()">
+            🌙
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-text">
+            <h1>Hello, I'm <span class="name">Ashutosh</span></h1>
+            <h2><span id="typing"></span></h2>
+            <p>I'm a first-year Computer Science and Engineering student at Rungta International Skill University (RISU).
+               I am passionate about solving complex problems through code and am currently building a solid foundation in 
+               software development and computational thinking. As a tech enthusiast, I'm constantly exploring new 
+               languages and frameworks to turn creative ideas into functional digital solutions.</p>
+            <a href="ashutosh.Resume copy.pdf" class="btn">Download Resume</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2 class="section-title">About Me 🙋‍♂️</h2>
+
+        <div class="about-container">
+            <img src="ashutosh1.jpg" alt="Profile" class="profile-img">
+
+            <div class="about-text">
+                <h3>Who Am I?</h3>
+                <p>
+                "Hi! I'm a first-year Computer Science and Engineering student at Rungta International Skill University (RISU).
+                I am passionate about solving complex problems through code and am currently building a solid foundation in software development and 
+                computational thinking. As a tech enthusiast, I'm constantly exploring new languages and frameworks to turn creative ideas into 
+                functional digital solutions. 
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <h2 class="section-title">Skills 🎯</h2>
+
+        <div class="skills-grid">
+            <div class="skill-card"><img src="html.png" alt="HTML" class="skill-icon">HTML</div>
+            <div class="skill-card"><img src="css.png" alt="CSS" class="skill-icon">CSS</div>
+            <div class="skill-card"><img src="js.png" alt="JavaScript" class="skill-icon">JavaScript</div>
+            <div class="skill-card"><img src="react.png" alt="React" class="skill-icon">React</div>
+            <div class="skill-card"><img src="node.png" alt="Node.js" class="skill-icon">Node.js</div>
+            <div class="skill-card"><img src="github.png" alt="Git & GitHub" class="skill-icon">Git & GitHub</div>
+        </div>
+    </section>
+
+    
+    <section id="projects" class="projects">
+        <h2 class="section-title">Projects</h2>
+
+        <div class="project-grid">
+            <div class="project-card">
+                <img src="ttttttt.jpeg" alt="Project Image">
+                <h3>TIC-TAK-TOE</h3>
+                <p>Tic-Tac-Toe is a simple two-player strategy game played on a 3×3 grid. 
+                    Players take turns marking empty squares—one as X, the other as O—with 
+                    the goal of being the first to form a straight line of three marks 
+                    horizontally, vertically, or diagonally. If all squares are filled without 
+                    a winning line, the game ends in a draw</p>
+                <a href="https://the-xo-challange.netlify.app/" class="btn small">View Project</a>
+            </div>
+
+            <div class="project-card">
+                <img src="comingsoon.jpeg" alt="Project Image">
+                <h3>Project Title</h3>
+                <p>Comeing Soon</p>
+                <a href="######" class="btn small">View Project</a>
+            </div>
+
+            <div class="project-card">
+                <img src="comingsoon.jpeg" alt="Project Image">
+                <h3>Project Title</h3>
+                <p>Comeing Soon</p>
+                <a href="####" class="btn small">View Project</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2 class="section-title">Contact Me ☎</h2>
+
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Email Address" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+
+   
+    <footer>
+        <p>© 2025 Ashutosh Kr. Rana. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
